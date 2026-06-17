@@ -1,0 +1,22 @@
+{
+  "name": "ai-camp",
+  "version": "1.0.0",
+  "description": "暑假AI探索营 - 8周从零到AI自由创作",
+  "type": "module",
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview"
+  },
+  "keywords": [
+    "AI",
+    "教育",
+    "儿童"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vitepress": "^1.6.4",
+    "vue": "^3.5.38"
+  }
+}

@@ -1,0 +1,230 @@
+/* 莫兰迪色调主题定制 */
+
+/* ===== CSS 变量覆盖 ===== */
+:root {
+  /* 主色调 —— 莫兰迪棕 */
+  --vp-c-brand-1: #a68b6e;
+  --vp-c-brand-2: #b89e83;
+  --vp-c-brand-3: #c4a882;
+  --vp-c-brand-soft: rgba(166, 139, 110, 0.14);
+
+  /* 背景色 —— 暖灰白 */
+  --vp-c-bg: #f5f1eb;
+  --vp-c-bg-alt: #ede7dd;
+  --vp-c-bg-elv: #ffffff;
+  --vp-c-bg-soft: #faf7f2;
+
+  /* 文字色 */
+  --vp-c-text-1: #4a4a4a;
+  --vp-c-text-2: #6b6b6b;
+  --vp-c-text-3: #8c8c8c;
+
+  /* 边框 */
+  --vp-c-border: #e0d8cc;
+  --vp-c-border-hard: #d4cbb8;
+  --vp-c-divider: #e8e0d5;
+
+  /* 首页 */
+  --vp-home-hero-name-color: #a68b6e;
+  --vp-home-hero-name-background: linear-gradient(135deg, #c4a882 0%, #a8b5a2 100%);
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #c4a882 30%, #a8b5a2 70%);
+  --vp-home-hero-image-filter: blur(68px);
+
+  /* 按钮 */
+  --vp-button-brand-bg: #a68b6e;
+  --vp-button-brand-hover-bg: #b89e83;
+  --vp-button-brand-active-bg: #8f755a;
+  --vp-button-brand-text: #ffffff;
+
+  --vp-button-alt-bg: #e8e0d5;
+  --vp-button-alt-hover-bg: #ddd3c5;
+  --vp-button-alt-text: #4a4a4a;
+
+  /* 代码块 */
+  --vp-code-block-bg: #f5f1eb;
+  --vp-code-line-height: 1.7;
+
+  /* 自定义属性 */
+  --camp-green: #a8b5a2;
+  --camp-purple: #b8a9c9;
+  --camp-pink: #d4b5a1;
+  --camp-brown: #c4a882;
+}
+
+/* 暗色模式 */
+.dark {
+  --vp-c-brand-1: #c4a882;
+  --vp-c-brand-2: #b89e83;
+  --vp-c-brand-3: #d4b5a1;
+  --vp-c-brand-soft: rgba(196, 168, 130, 0.16);
+
+  --vp-c-bg: #2a2520;
+  --vp-c-bg-alt: #322d27;
+  --vp-c-bg-elv: #38332c;
+  --vp-c-bg-soft: #3d3730;
+
+  --vp-c-text-1: #e0d8cc;
+  --vp-c-text-2: #c4bdb2;
+  --vp-c-text-3: #a0988e;
+
+  --vp-c-border: #4a4238;
+  --vp-c-border-hard: #5a5248;
+  --vp-c-divider: #3d3730;
+
+  --vp-button-brand-bg: #a68b6e;
+  --vp-button-brand-hover-bg: #b89e83;
+
+  --vp-code-block-bg: #322d27;
+}
+
+/* ===== 全局样式 ===== */
+
+/* 页面主容器 */
+.VPDoc {
+  background: var(--vp-c-bg-soft);
+}
+
+/* 内容卡片效果 */
+.vp-doc .custom-card {
+  background: var(--vp-c-bg-elv);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: box-shadow 0.2s;
+}
+
+.vp-doc .custom-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* 步骤列表 */
+.vp-doc .step-list {
+  counter-reset: step;
+  list-style: none;
+  padding-left: 0;
+}
+
+.vp-doc .step-list li {
+  counter-increment: step;
+  padding: 0.75rem 0 0.75rem 2.5rem;
+  position: relative;
+  border-left: 2px solid var(--vp-c-border);
+  margin-left: 0.75rem;
+}
+
+.vp-doc .step-list li::before {
+  content: counter(step);
+  position: absolute;
+  left: -0.95rem;
+  top: 0.65rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--camp-brown);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 标签样式 */
+.vp-doc .tag {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-right: 0.3rem;
+}
+
+.vp-doc .tag-target { background: var(--camp-brown); color: #fff; }
+.vp-doc .tag-prep { background: #e8e0d5; color: #4a4a4a; }
+.vp-doc .tag-case { background: var(--camp-purple); color: #fff; }
+.vp-doc .tag-hands { background: var(--camp-green); color: #fff; }
+.vp-doc .tag-test { background: var(--camp-pink); color: #fff; }
+.vp-doc .tag-video { background: #d4c5b0; color: #4a4a4a; }
+
+/* 建议/提示块 */
+.vp-doc .tip-block {
+  border-left: 4px solid var(--camp-green);
+  background: rgba(168, 181, 162, 0.1);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.vp-doc .warn-block {
+  border-left: 4px solid var(--camp-pink);
+  background: rgba(212, 181, 161, 0.15);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 8px 8px 0;
+}
+
+/* 链接卡片 */
+.vp-doc a.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  background: var(--vp-c-bg-alt);
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.vp-doc a.resource-link:hover {
+  border-color: var(--camp-brown);
+  background: rgba(196, 168, 130, 0.1);
+  text-decoration: none;
+}
+
+/* 进度条 */
+.progress-bar {
+  height: 6px;
+  background: var(--vp-c-border);
+  border-radius: 3px;
+  margin: 1rem 0;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--camp-brown), var(--camp-green));
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+/* 勾选框美化 */
+.vp-doc input[type="checkbox"] {
+  accent-color: var(--camp-green);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+  .vp-doc .custom-card {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .vp-doc .step-list li {
+    padding-left: 2rem;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .VPNav, .VPSidebar, .VPDocAside {
+    display: none !important;
+  }
+  .VPDoc {
+    padding: 0 !important;
+  }
+}
